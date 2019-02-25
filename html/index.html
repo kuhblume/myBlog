@@ -7,12 +7,51 @@
     <title>Title</title>
 </head>
 <body>
-<!--<div id="menu"></div>-->
 <div class="header">
-    <!--タイトルとかハンバーガーボタンとか-->header
-    <a class="menu-trigger">
-        <span></span>
-    </a>
+    <!--タイトルとかハンバーガーボタンとか-->
+    <!--<label class="menu">-->
+        <!--<input type="checkbox" class="menu-switch">-->
+        <!--<span class="menu-trigger">-->
+            <!--<span></span>-->
+            <!--<span></span>-->
+            <!--<span></span>-->
+        <!--</span>-->
+    <!--</label>-->
+    <div class="title">
+        title
+    </div>
+    <div id="radioCase">
+        <div>
+            <label>
+                <input type="radio" class="hiddenRadio" name="radio" value="0" checked onclick="tabSelect(0)">
+                <span class="radioIcon">Home</span>
+            </label>
+        </div>
+        <div>
+            <label>
+                <input type="radio" class="hiddenRadio" name="radio" value="1" onclick="tabSelect(1)">
+                <span class="radioIcon">Profile</span>
+            </label>
+        </div>
+        <div>
+            <label>
+                <input type="radio" class="hiddenRadio" name="radio" value="2" onclick="tabSelect(2)">
+                <span class="radioIcon">Link</span>
+            </label>
+        </div>
+        <div>
+            <label>
+                <input type="radio" class="hiddenRadio" name="radio" value="3" onclick="tabSelect(3)">
+                <span class="radioIcon">Blog</span>
+            </label>
+        </div>
+        <div>
+            <label>
+                <input type="radio" class="hiddenRadio" name="radio" value="4" onclick="tabSelect(4)">
+                <span class="radioIcon">Other</span>
+            </label>
+        </div>
+    </div>
 </div>
 <div class="tab-case">
     <div class="tab">
@@ -74,40 +113,42 @@
     <div class="tab">あｓｈｄｊｆｋおひいおひおひおｈｇa</div>
 </div>
 <div class="footer">
+
     <!--スライダーによくある現在のタブを表示するやつ○○●○-->
     <!--フリックで左右にタブを行き来する-->
-    <div id="radioCase">
-        <div>
-            <label>
-                <input type="radio" class="hiddenRadio" name="radio" value="0" checked onclick="tabSelect(0)">
-                <span class="radioIcon"></span>
-            </label>
-        </div>
-        <div>
-            <label>
-                <input type="radio" class="hiddenRadio" name="radio" value="1" onclick="tabSelect(1)">
-                <span class="radioIcon"></span>
-            </label>
-        </div>
-        <div>
-            <label>
-                <input type="radio" class="hiddenRadio" name="radio" value="2" onclick="tabSelect(2)">
-                <span class="radioIcon"></span>
-            </label>
-        </div>
-        <div>
-            <label>
-                <input type="radio" class="hiddenRadio" name="radio" value="3" onclick="tabSelect(3)">
-                <span class="radioIcon"></span>
-            </label>
-        </div>
-        <div>
-            <label>
-                <input type="radio" class="hiddenRadio" name="radio" value="4" onclick="tabSelect(4)">
-                <span class="radioIcon"></span>
-            </label>
-        </div>
-    </div>
+    <!--<div id="radioCase">-->
+        <!--<div>-->
+            <!--<label>-->
+                <!--<input type="radio" class="hiddenRadio" name="radio" value="0" checked onclick="tabSelect(0)">-->
+                <!--<span class="radioIcon"></span>-->
+            <!--</label>-->
+        <!--</div>-->
+        <!--<div>-->
+            <!--<label>-->
+                <!--<input type="radio" class="hiddenRadio" name="radio" value="1" onclick="tabSelect(1)">-->
+                <!--<span class="radioIcon"></span>-->
+            <!--</label>-->
+        <!--</div>-->
+        <!--<div>-->
+            <!--<label>-->
+                <!--<input type="radio" class="hiddenRadio" name="radio" value="2" onclick="tabSelect(2)">-->
+                <!--<span class="radioIcon"></span>-->
+            <!--</label>-->
+        <!--</div>-->
+        <!--<div>-->
+            <!--<label>-->
+                <!--<input type="radio" class="hiddenRadio" name="radio" value="3" onclick="tabSelect(3)">-->
+                <!--<span class="radioIcon"></span>-->
+            <!--</label>-->
+        <!--</div>-->
+        <!--<div>-->
+            <!--<label>-->
+                <!--<input type="radio" class="hiddenRadio" name="radio" value="4" onclick="tabSelect(4)">-->
+                <!--<span class="radioIcon"></span>-->
+            <!--</label>-->
+        <!--</div>-->
+    <!--</div>-->
+
     <div class="vector">
         <span id="left" onclick="left()"></span>
         <span id="right" onclick="right()"></span>
@@ -118,3 +159,6 @@
 <script src="../js/main.js"></script>
 </body>
 </html>
+
+
+
