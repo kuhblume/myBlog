@@ -9,104 +9,77 @@ body{
     left: 0;
     width: 100vw;
     height: 70px;             /* 縦幅140px */
-    background-color: yellowgreen;
+    background-color: #e5e5e5;
     z-index: 15;
 
     display: flex;
     align-items: center;
-
-    /*opacity: 0.5;*/
 }
 .footer{
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100vw;
-    height: 90px;              /* 縦幅140px */
-    background-color: yellowgreen;
+    height: 70px;              /* 縦幅140px */
+    background-color: #e5e5e5;
     z-index: 10;
 
     display: flex;
     align-items: center;
-
-    /*opacity: 0.5;*/
 }
 .tab-case{
     width: 100vw;
     overflow-x: hidden;
-    /*height: 100%;*/
-    /*padding:140px 0 90px 0;    !* ヘッダとフッタの調整時に再調整が必要 *!*/
 }
 .tab-case .tab{
     width: 100%;
-    /*height:100%*/
     position: absolute;
     left: 0;
     top: 0;
-    padding:80px 0 100px 0;        /* ヘッダとフッタの調整時に再調整が必要 */
+    padding:80px 0 80px 0;        /* ヘッダとフッタの調整時に再調整が必要 */
     transition-duration:0.9s;
+    border-right: solid #868789 1px;
+    margin-left: -1px;
 }
 
 .tab-case .tab:nth-of-type(1){/*自己紹介*/
-    background-color: red;
+    background-color: #f1f1f1;
     left: 0;
     top: 0;
 }
 .tab-case .tab:nth-of-type(2){/*趣味*/
-    background-color: blue;
+    background-color: #f1f1f1;
     left: -100%;
     top: 0;
 }
 .tab-case .tab:nth-of-type(3){/*リンク*/
-    background-color: green;
+    background-color: #f1f1f1;
     left: -100%;
     top: 0;
 }
 .tab-case .tab:nth-of-type(4){/*ブログ*/
-    background-color: #e66d09;
+    background-color: #f1f1f1;
     left: -100%;
     top: 0;
 }
 
 .tab-case .tab:last-child{/*訪問者解析(js実装の範囲)*/
-    background-color: #fdff00;
+    background-color: #f1f1f1;
     left: -100%;
     top: 0;
 }
-
-/*.menu-switch + .menu-trigger + .menuList{*/
-    /*position: fixed;*/
-    /*background-color: #007380;*/
-    /*height: 100vh;*/
-    /*width: 100vw;*/
-    /*z-index: 10;*/
-    /*opacity: 0.0;*/
-    /*display: none;*/
-/*}*/
-/*.menu-switch:checked + .menu-trigger + .menuList{*/
-    /*display: inherit;*/
-    /*opacity: 0.5;*/
-/*}*/
 .title{
-    /*width: 40%;*/
     flex: 1;
     padding-left: 20px;
     padding-right: -20px;
-    /*padding-top: 2px;*/
     font-family: 'Century Gothic';
     font-size: 50px;
 }
 
 #radioCase{
     display: flex;
-    flex: 1;
-    /*padding-top: 8px;*/
-    /*padding-bottom: 8px;*/
-    padding-left: -20px;
+    flex: 1; padding-left: -20px;
     padding-right: 20px;
-    /*width: 60%;*/
-    /*position: relative;*/
-    /*left: 0;*/
 }
 #radioCase div{
     flex: 1;
@@ -115,36 +88,45 @@ body{
 .hiddenRadio{
     display: none;
 }
+#radioCase div label{
+
+}
 .hiddenRadio + .radioIcon{
     position: relative;
     display: inline-block;
-    background: red;
+    background: #c2c2c2;
     height: 40px;
     width: 80%;
     border-radius: 10px 10px 10px 10px; /*左上,右下に40px*/
     font-family: 'Century Gothic';
 }
 .hiddenRadio:checked + .radioIcon{
-    background: #17bcdf;
+    background: #fafafa;
 }
 .hiddenRadio:hover + .radioIcon{
-    background: #007380;
+    animation-name: buttonHover;
+    animation-duration: .6s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes buttonHover {
+    0%{
+        background-color: #c2c2c2;
+    }
+    100%{
+        background-color: #868789;
+    }
 }
 
 .vector{
     width: 100%;
-    /*padding-top: 20px;*/
     display: flex;
     justify-content: space-between;
-    /*padding-left: 20px;*/
-    /*margin-right: 20px;*/
 }
 #left,#right{
-    height: 80px;
-    width: 80px;
-    /*position: relative;*/
+    height: 60px;
+    width: 75px;
     background-color: black;
-    /*display: inline-block;*/
     text-align: center;
     display: flex;
     justify-content: space-around;
@@ -155,51 +137,42 @@ body{
 
 }
 #right{
-    /*margin-top: 10px;*/
     margin-right: 40px;
-    /*float: right;*/
-    /*justify-content: space-between;*/
 }
 #left{
-    /*margin-top: 10px;*/
     margin-left: 40px;
-    /*float: left;*/
-    /*justify-content: space-between;*/
 }
 #left:active,#right:active{
     background-color: white;
 }
 #left:hover,#right:hover{
-    background-color: #007380;
+    background-color: #fafafa;
 }
 .arrow{
-    /*text-align: center;*/
+}
+.arrow:before,.arrow:after{
+    content: '';
+    display: block;
+    width: 39px;
+    height: 8px;
+    background-color: white;
 }
 .arrow:before{
-    content: '';
-    display: block;
-    width: 39px;
-    height: 8px;
-    background-color: white;
-    transform: translateY(-7px) translateX(-4px) rotate(-45deg);
+    transform: translateY(-4px) translateX(-4px) rotate(-30deg);
+    border-radius: 10px 0 0 10px;
 }
 #left:hover .arrow:before,#left:hover .arrow:after{
-    background-color: red;
+    background-color: #d7d7d7;
 }
 .arrow:after{
-    content: '';
-    display: block;
-    width: 39px;
-    height: 8px;
-    background-color: white;
-    transform: translateY(7px) translateX(-4px) rotate(45deg);
+    transform: translateY(4px) translateX(-4px) rotate(30deg);
+    border-radius: 10px 0 0 10px;
 }
 #right:hover .arrow:before, #right:hover .arrow:after{
-    background-color: red;
+    background-color: #d7d7d7;
 }
 
 #left .arrow{
-    /*transform: rotate(225deg);*/
 }
 #right .arrow{
     transform: rotate(180deg)
@@ -207,27 +180,18 @@ body{
 
 
 .menu-trigger{
-    /*width: 60px;*/
-    /*height: 40px;*/
     position: absolute;
     top: 8px;
     right: 40px;
     margin:auto;
     cursor: pointer;
-    /*background-color: #0095a4;*/
     text-align: center;
 }
 .menu-trigger span:nth-of-type(2){
-    /*position: relative;*/
-    /*height: 200px;*/
-    /*background-color: red;*/
-    /*margin-top: 10px;*/
     color: white;
     font-family: 'Century Gothic';
     font-size: 24px;
     font-weight: 600;
-    /*background-color: red;*/
-    /*vertical-align: center;*/
 }
 .menu-trigger span:nth-of-type(1),.menu-trigger span:nth-of-type(3){
     display: block;
@@ -238,17 +202,13 @@ body{
     border-radius: 2px;
 }
 .menu-trigger span:nth-of-type(1){
-    /*transform:translateY(0px);*/
     margin-bottom: 5px;
 }
 .menu-trigger span:nth-of-type(2):before{
-    /*transform: translateY(20px);*/
     content: "menu";
     transition: .5s;
-    /*height: 80px;*/
 }
 .menu-trigger span:nth-of-type(3){
-    /*transform: translateY(0px);*/
     margin-top: 8px;
 }
 .menu-switch:checked + .menu-trigger span:nth-of-type(1){
@@ -259,7 +219,6 @@ body{
 }
 
 .menu-switch:checked + .menu-trigger span:nth-of-type(2):before{
-    /*content: "　";*/
     opacity: 0;
 }
 .menu-switch{
