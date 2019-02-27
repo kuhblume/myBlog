@@ -46,6 +46,18 @@ function tabSelect(radioValue) {
     }
 }
 
+document.onkeydown = keyInfo =>{//ここの原理がよくわからない。=>イベントハンドラ-onkeydown-キー入力をキャッチできる。onclickとかの仲間
+    switch (keyInfo.key) {
+        case "ArrowRight":
+            right();
+            break;
+        case "ArrowLeft":
+            left();
+            break
+    }
+};
+
+
 let menuOpen=false;
 
 

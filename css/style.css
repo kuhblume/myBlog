@@ -11,7 +11,10 @@ body{
     height: 70px;             /* 縦幅140px */
     background-color: yellowgreen;
     z-index: 15;
+
     display: flex;
+    align-items: center;
+
     /*opacity: 0.5;*/
 }
 .footer{
@@ -19,9 +22,13 @@ body{
     bottom: 0;
     left: 0;
     width: 100vw;
-    height: 140px;              /* 縦幅140px */
+    height: 90px;              /* 縦幅140px */
     background-color: yellowgreen;
     z-index: 10;
+
+    display: flex;
+    align-items: center;
+
     /*opacity: 0.5;*/
 }
 .tab-case{
@@ -36,7 +43,7 @@ body{
     position: absolute;
     left: 0;
     top: 0;
-    padding:80px 0 150px 0;        /* ヘッダとフッタの調整時に再調整が必要 */
+    padding:80px 0 100px 0;        /* ヘッダとフッタの調整時に再調整が必要 */
     transition-duration:0.9s;
 }
 
@@ -85,13 +92,15 @@ body{
     flex: 1;
     padding-left: 20px;
     padding-right: -20px;
-    padding-top: 10px;
+    /*padding-top: 2px;*/
+    font-family: 'Century Gothic';
+    font-size: 50px;
 }
 
 #radioCase{
     display: flex;
     flex: 1;
-    padding-top: 8px;
+    /*padding-top: 8px;*/
     /*padding-bottom: 8px;*/
     padding-left: -20px;
     padding-right: 20px;
@@ -113,6 +122,7 @@ body{
     height: 40px;
     width: 80%;
     border-radius: 10px 10px 10px 10px; /*左上,右下に40px*/
+    font-family: 'Century Gothic';
 }
 .hiddenRadio:checked + .radioIcon{
     background: #17bcdf;
@@ -123,19 +133,38 @@ body{
 
 .vector{
     width: 100%;
+    /*padding-top: 20px;*/
+    display: flex;
+    justify-content: space-between;
+    /*padding-left: 20px;*/
+    /*margin-right: 20px;*/
 }
 #left,#right{
-    height: 50px;
-    width: 40%;
-    position: relative;
+    height: 80px;
+    width: 80px;
+    /*position: relative;*/
     background-color: black;
-    display: inline-block;
+    /*display: inline-block;*/
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    border-radius: 100px; /*左上,右下に40px*/
+
+
 }
 #right{
-    float: right;
+    /*margin-top: 10px;*/
+    margin-right: 40px;
+    /*float: right;*/
+    /*justify-content: space-between;*/
 }
 #left{
-    float: left;
+    /*margin-top: 10px;*/
+    margin-left: 40px;
+    /*float: left;*/
+    /*justify-content: space-between;*/
 }
 #left:active,#right:active{
     background-color: white;
@@ -143,7 +172,38 @@ body{
 #left:hover,#right:hover{
     background-color: #007380;
 }
+.arrow{
+    /*text-align: center;*/
+}
+.arrow:before{
+    content: '';
+    display: block;
+    width: 39px;
+    height: 8px;
+    background-color: white;
+    transform: translateY(-7px) translateX(-4px) rotate(-45deg);
+}
+#left:hover .arrow:before,#left:hover .arrow:after{
+    background-color: red;
+}
+.arrow:after{
+    content: '';
+    display: block;
+    width: 39px;
+    height: 8px;
+    background-color: white;
+    transform: translateY(7px) translateX(-4px) rotate(45deg);
+}
+#right:hover .arrow:before, #right:hover .arrow:after{
+    background-color: red;
+}
 
+#left .arrow{
+    /*transform: rotate(225deg);*/
+}
+#right .arrow{
+    transform: rotate(180deg)
+}
 
 
 .menu-trigger{
@@ -249,3 +309,8 @@ body{
 /*forwardsとbackwardsの両方を適用したもの。*/
 
 /*animation-play-state:アニメーションを再生中か一時停止にするプロパティ。*/
+
+
+/*Flex めちゃクソ便利。これで統一して中心ぞろえと化するほうが絶対いい
+    毎回調べてでもflexで実装しろ
+*/
