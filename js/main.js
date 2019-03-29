@@ -57,8 +57,39 @@ document.onkeydown = keyInfo =>{//ここの原理がよくわからない。=>�
     }
 };
 
+function getTest(){
+    // var requestAjax = function(endpoint, callback) {
+    //     var xhr = new XMLHttpRequest();
+    //     xhr.onreadystatechange = function(){
+    //         if (this.readyState==4 && this.status==200) {
+    //             callback(this.response);
+    //         }
+    //     };
+    //     xhr.responseType = 'json';
+    //     xhr.open('GET',endpoint,true);
+    //     xhr.send();
+    // };
+    // requestAjax("http://127.0.0.1:3000/", function(response){
+    //     console.log(response);
+    // });
+}
 
-let menuOpen=false;
+var xhr = new XMLHttpRequest();
+var url = 'http://localhost:3000/';
 
+const handler = () => {
+    // コンソールに出力
+    console.log(xhr.responseText)
+};
+
+const getRequest = () => {
+    xhr.open('GET', url);
+    xhr.onloadend = handler;
+    xhr.send()
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+    getRequest()
+});
 
 
