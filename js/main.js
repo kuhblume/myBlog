@@ -93,7 +93,7 @@ function getTest(){
 // });
 
 
-var requestAjax = function(endpoint, callback) {
+function requestAjax(endpoint, callback) {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function(){
         if (this.readyState==4 && this.status==200) {
@@ -103,8 +103,11 @@ var requestAjax = function(endpoint, callback) {
     xhr.responseType = 'json';
     xhr.open('POST',endpoint,true);
     xhr.send();
-};
+}
 
-requestAjax("http://localhost:3000/", function(response){
-    console.log(response);
-});
+function doRequest(){
+    requestAjax("http://localhost:3000/", function(response){
+        console.log(response);
+    });
+}
+
