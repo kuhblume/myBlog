@@ -101,7 +101,7 @@ var requestAjax = function(endpoint, callback) {
         }
     };
     xhr.responseType = 'json';
-    xhr.open('GET',endpoint,true);
+    xhr.open('POST',endpoint,true);
     xhr.send();
 };
 
