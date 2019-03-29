@@ -57,22 +57,7 @@ document.onkeydown = keyInfo =>{//ここの原理がよくわからない。=>�
     }
 };
 
-function getTest(){
-    // var requestAjax = function(endpoint, callback) {
-    //     var xhr = new XMLHttpRequest();
-    //     xhr.onreadystatechange = function(){
-    //         if (this.readyState==4 && this.status==200) {
-    //             callback(this.response);
-    //         }
-    //     };
-    //     xhr.responseType = 'json';
-    //     xhr.open('GET',endpoint,true);
-    //     xhr.send();
-    // };
-    // requestAjax("http://127.0.0.1:3000/", function(response){
-    //     console.log(response);
-    // });
-}
+
 
 // var xhr = new XMLHttpRequest();
 // var url = 'http://localhost:3000/';
@@ -105,7 +90,7 @@ function requestAjax(endpoint, callback) {
     xhr.send();
 }
 
-function  doRequest(){
+function doRequest(){
     requestAjax("http://localhost:3000/", function(response){
         console.log(response);
     });
