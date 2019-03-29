@@ -87,7 +87,8 @@ function requestAjax(endpoint, callback) {
     };
     xhr.responseType = 'json';
     xhr.open('POST',endpoint,true);
-    xhr.send();
+    xhr.setRequestHeader( 'Content-Type', "application/json;charset=UTF-8" );
+    xhr.send(JSON.stringify('[0, 1, 2]'));
 }
 
 function doRequest(){
