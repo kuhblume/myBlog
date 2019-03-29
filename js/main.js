@@ -105,7 +105,7 @@ function requestAjax(endpoint, callback) {
     xhr.send();
 }
 
-function doRequest(){
+function  doRequest(){
     requestAjax("http://localhost:3000/", function(response){
         console.log(response);
     });
