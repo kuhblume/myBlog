@@ -93,7 +93,7 @@ function requestAjax(endpoint, callback) {
 function doRequest(){
     requestAjax("http://localhost:3000/", function(response){
         console.log(response);
-        alert(response)
+        alert(response);
     });
 }
 
