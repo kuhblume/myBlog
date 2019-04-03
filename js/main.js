@@ -87,7 +87,6 @@ function requestAjax(endpoint, callback) {
     };
     xhr.responseType = 'json';
     xhr.open('GET',endpoint,true);
-    // xhr.setRequestHeader( 'Content-Type', "application/json;charset=UTF-8" );
     xhr.send();
 }
 
@@ -96,4 +95,5 @@ function doRequest(){
         console.log(response);
     });
 }
+
 
