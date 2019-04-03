@@ -86,13 +86,14 @@ function requestAjax(endpoint, callback) {
         }
     };
     xhr.responseType = 'json';
-    xhr.open('GET',endpoint,true);
+    xhr.open('GET' ,endpoint,true);
     xhr.send();
 }
 
 function doRequest(){
     requestAjax("http://localhost:3000/", function(response){
         console.log(response);
+        alert(response)
     });
 }
 
