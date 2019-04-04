@@ -100,4 +100,11 @@ function doRequest(){
     alert(f);
 }
 
+function doReq() {
+    requestAjax("http://localhost:3000/test", function(response){
+        console.log(response);
+        alert(response);
+    });
+}
+
 
