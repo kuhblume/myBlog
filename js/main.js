@@ -91,13 +91,21 @@ function requestAjax(endpoint, callback) {
 }
 
 function doRequest(){
-    var f;
-    requestAjax("http://localhost:3000/", function(response){
-        console.log(response);
-        alert(response);
-        f=response;
-    });
-    alert(f);
+    var xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                console.log(xhr.response);
+            } else {
+                console.log("status = " + xhr.status);
+            }
+        }
+    };
+
+    xhr.open("GET", "http://localhost:3000/test");
+    xhr.responseType = "json";
+    xhr.send();
 }
 
 function doReq() {
