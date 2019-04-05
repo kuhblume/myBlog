@@ -96,7 +96,7 @@ function doRequest(){
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {
-                console.log(xhr.response);
+                console.log(xhr);
             } else {
                 console.log("status = " + xhr.status);
             }
