@@ -97,13 +97,14 @@ function doRequest(){
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {
                 console.log(xhr);
+                // console.log(xhr.response);
             } else {
                 console.log("status = " + xhr.status);
             }
         }
     };
 
-    xhr.open("GET", "http://localhost:3000/test");
+    xhr.open("GET", "http://localhost:3000");
     xhr.responseType = "json";
     xhr.send();
 }
