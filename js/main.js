@@ -118,10 +118,24 @@ function doRequest(){
 }
 
 function doReq() {
-    requestAjax("http://localhost:3000/test", function(response){
-        console.log(response);
-        alert(response);
-    });
+    // requestAjax("http://localhost:3000/test", function(response){
+    //     console.log(response);
+    //     alert(response);
+    // });
+    let xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4){//通信が完了したか
+            if (xhr.status === 200){//通信が成功したか
+                console.log(xhr.responseText);
+            } else{//xhr.statusが200以外=>通信に失敗した場合
+
+            }
+        } else{//xhr.readyStateが4以外=>通信中
+
+        }
+    };
+    xhr.open('GET','http://localhost:3000',true);
+    xhr.send(null);
 }
 
 
