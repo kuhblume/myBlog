@@ -91,22 +91,30 @@ function requestAjax(endpoint, callback) {
 }
 
 function doRequest(){
-    var xhr = new XMLHttpRequest();
+    // var xhr = new XMLHttpRequest();
+    //
+    // xhr.onreadystatechange = function() {
+    //     if (xhr.readyState === 4) {
+    //         if (xhr.status === 200) {
+    //             console.log(xhr);
+    //             // console.log(xhr.response);
+    //         } else {
+    //             console.log("status = " + xhr.status);
+    //         }
+    //     }
+    // };
+    //
+    // xhr.open("GET", "http://localhost:3000");
+    // xhr.responseType = "json";
+    // xhr.send();
 
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
-                console.log(xhr);
-                // console.log(xhr.response);
-            } else {
-                console.log("status = " + xhr.status);
-            }
-        }
-    };
-
-    xhr.open("GET", "http://localhost:3000");
-    xhr.responseType = "json";
-    xhr.send();
+    const request = new XMLHttpRequest();
+    request.open("GET", `http://localhost:3000`);
+    request.addEventListener("load", (event) => {
+        console.log(event.target.status); // => 200
+        console.log(event.target.responseText); // => "{...}"
+    });
+    request.send();
 }
 
 function doReq() {
