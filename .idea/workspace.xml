@@ -4,11 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/js/main.js" line="48" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1efc99c-b567-4bc9-8792-12c529aaa394" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/りどみ.md" beforeDir="false" afterPath="$PROJECT_DIR$/りどみ.md" afterDir="false" />
-    </list>
+    <list default="true" id="c1efc99c-b567-4bc9-8792-12c529aaa394" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +31,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/main.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="85">
-                  <caret line="120" column="23" lean-forward="true" selection-start-line="120" selection-start-column="20" selection-end-line="120" selection-end-column="46" />
+                <state relative-caret-position="41">
+                  <caret line="113" column="29" selection-start-line="113" selection-start-column="29" selection-end-line="113" selection-end-column="29" />
                 </state>
               </provider>
             </entry>
@@ -85,10 +81,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="709" />
-    <option name="y" value="-27" />
-    <option name="width" value="437" />
-    <option name="height" value="290" />
+    <option name="x" value="-11" />
+    <option name="width" value="980" />
+    <option name="height" value="1031" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -177,18 +172,17 @@
       <workItem from="1554299282667" duration="2115000" />
       <workItem from="1554383349594" duration="255000" />
       <workItem from="1554383750779" duration="7000" />
-      <workItem from="1554458936319" duration="8608000" />
+      <workItem from="1554458936319" duration="9268000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128355000" />
+    <option name="totallyTimeSpent" value="129015000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.09836066" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09836066" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -201,7 +195,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.24232082" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.24232082" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -271,8 +265,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="120" column="23" lean-forward="true" selection-start-line="120" selection-start-column="20" selection-end-line="120" selection-end-column="46" />
+        <state relative-caret-position="41">
+          <caret line="113" column="29" selection-start-line="113" selection-start-column="29" selection-end-line="113" selection-end-column="29" />
         </state>
       </provider>
     </entry>

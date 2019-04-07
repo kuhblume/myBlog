@@ -162,7 +162,7 @@ function doReq() {
     xmlHttpRequest.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded' );
 
 // データをリクエスト ボディに含めて送信する
-    xmlHttpRequest.send( EncodeHTMLForm( data ) );
+    xmlHttpRequest.send( data );
 }
 
 
