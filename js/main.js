@@ -122,20 +122,47 @@ function doReq() {
     //     console.log(response);
     //     alert(response);
     // });
-    let xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4){//通信が完了したか
-            if (xhr.status === 200){//通信が成功したか
-                console.log(xhr.responseText);
-            } else{//xhr.statusが200以外=>通信に失敗した場合
 
-            }
-        } else{//xhr.readyStateが4以外=>通信中
+    //動いたpost
+    // let xhr = new XMLHttpRequest();
+    // xhr.onreadystatechange = function () {
+    //     if (xhr.readyState === 4){//通信が完了したか
+    //         if (xhr.status === 200){//通信が成功したか
+    //             console.log(xhr.responseText);
+    //         } else{//xhr.statusが200以外=>通信に失敗した場合
+    //
+    //         }
+    //     } else{//xhr.readyStateが4以外=>通信中
+    //
+    //     }
+    // };
+    // xhr.open('GET','http://localhost:3000',true);
+    // xhr.send(null);
 
+    var data = { foo: 'abc', bar: 100 }; // POSTメソッドで送信するデータ
+
+
+    var xmlHttpRequest = new XMLHttpRequest();
+    xmlHttpRequest.onreadystatechange = function()
+    {
+        var READYSTATE_COMPLETED = 4;
+        var HTTP_STATUS_OK = 200;
+
+        if( this.readyState == READYSTATE_COMPLETED
+            && this.status == HTTP_STATUS_OK )
+        {
+            // レスポンスの表示
+            alert( this.responseText );
         }
     };
-    xhr.open('GET','http://localhost:3000',true);
-    xhr.send(null);
+
+    xmlHttpRequest.open( 'POST', 'http://localhost:3000/test' );
+
+// サーバに対して解析方法を指定する
+    xmlHttpRequest.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded' );
+
+// データをリクエスト ボディに含めて送信する
+    xmlHttpRequest.send( EncodeHTMLForm( data ) );
 }
 
 
