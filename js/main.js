@@ -139,30 +139,48 @@ function doReq() {
     // xhr.open('GET','http://localhost:3000',true);
     // xhr.send(null);
 
-    var data = { foo: 'abc', bar: 100 }; // POSTメソッドで送信するデータ
+//     var data = { foo: 'abc', bar: 100 }; // POSTメソッドで送信するデータ
+//
+//
+//     var xmlHttpRequest = new XMLHttpRequest();
+//     xmlHttpRequest.onreadystatechange = function()
+//     {
+//         var READYSTATE_COMPLETED = 4;
+//         var HTTP_STATUS_OK = 200;
+//
+//         if( this.readyState == READYSTATE_COMPLETED
+//             && this.status == HTTP_STATUS_OK )
+//         {
+//             // レスポンスの表示
+//             console.log( this.responseText );
+//         }
+//     };
+//
+//     xmlHttpRequest.open( 'POST', 'http://localhost:3000/test' );
+//
+// // サーバに対して解析方法を指定する
+//     xmlHttpRequest.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded' );
+//
+// // データをリクエスト ボディに含めて送信する
+//     xmlHttpRequest.send( data );
 
 
-    var xmlHttpRequest = new XMLHttpRequest();
-    xmlHttpRequest.onreadystatechange = function()
-    {
-        var READYSTATE_COMPLETED = 4;
-        var HTTP_STATUS_OK = 200;
+    // XHRの宣言
+    var XHR = new XMLHttpRequest();
 
-        if( this.readyState == READYSTATE_COMPLETED
-            && this.status == HTTP_STATUS_OK )
-        {
-            // レスポンスの表示
-            alert( this.responseText );
+    // openメソッドにPOSTを指定して送信先のURLを指定します
+    XHR.open("POST", 'http://localhost:3000/test', true);
+
+    // sendメソッドにデータを渡して送信を実行する
+    XHR.send("aaaaaa");
+
+    // サーバの応答をonreadystatechangeイベントで検出して正常終了したらデータを取得する
+    XHR.onreadystatechange = function(){
+        if(XHR.readyState == 4 && XHR.status == 200){
+            // POST送信した結果を表示する
+            console.log(XHR.responseText);
         }
     };
-
-    xmlHttpRequest.open( 'POST', 'http://localhost:3000/test' );
-
-// サーバに対して解析方法を指定する
-    xmlHttpRequest.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded' );
-
-// データをリクエスト ボディに含めて送信する
-    xmlHttpRequest.send( data );
 }
 
 
