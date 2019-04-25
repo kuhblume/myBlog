@@ -46,6 +46,9 @@ function doRequest(req, res) {
                 console.log('loaded main.js');
             });
             break;
+
+            //ファビコンの場合分け
+
     }
 }
 
