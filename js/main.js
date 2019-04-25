@@ -110,7 +110,8 @@ function doRequest(){
     // xhr.send();
 
     const request = new XMLHttpRequest();
-    request.open("GET", `http://localhost:3000/get-all`);
+    // request.open("GET", `http://localhost:3000/get-all`);
+    request.open("GET", `https://node-db-kuhblume.herokuapp.com/get-all`);
     request.addEventListener("load", (event) => {
         console.log(event.target.status); // => 200
         console.log(event.target.responseText); // => "body"
@@ -231,7 +232,8 @@ function send() {
     console.log(request);
 
     let XHR = new XMLHttpRequest();
-    XHR.open("POST", 'http://localhost:3000/add', true);
+    // XHR.open("POST", 'http://localhost:3000/add', true);
+    XHR.open("POST", 'https://node-db-kuhblume.herokuapp.com/add', true);
     XHR.send(`title=${request.title}&date=${request.date}&body=${request.body}&tag=${request.tag}&is_shown=${request.is_shown}`);
     //応答確認なしのpost
 }
