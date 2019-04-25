@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <link rel="stylesheet" type="text/css" href="../css/style.css">
+<!--    <link rel="shortcut icon" href="favicon.ico" />-->
     <title>Title</title>
 </head>
 <body>
@@ -109,10 +110,32 @@
     <div class="tab">
         <div class="content">
             <h2>Blog<span>そのうちつくる</span></h2>
-            <p>firebaseDBを使って簡単なブログを実装</p>
-            <p>バックはすべてfirebaseにまかせて、機能はjsで実装</p>
-            <input type="button" value="(ボタンのキャプション)" onclick="doRequest()"/>
-            <input type="button" value="test" onclick="doReq()"/>
+            <input type="button" value="get" onclick="doRequest()"/>
+            <input type="button" value="showData" onclick="showData()"/>
+
+            <form id="post" action="http://localhost:3000/add" method="post" onsubmit="send();return false;">
+                <ul>
+                    <li>
+                        <label for="title_input">title</label><input name="title" id="title_input" type="text" value="" />
+                    </li>
+                    <li>
+                        <label for="date_input">date</label><input name="date" id="date_input" type="date" value= ""/>
+                    </li>
+                    <li>
+                        <label for="body_input">body</label><input name="body" id="body_input" type="text" value="" />
+                    </li>
+                    <li>
+                        <label for="tag_input">tag</label><input name="tag" id="tag_input" type="text" value="1" />
+                    </li>
+                    <li>
+                        <label for="is_shown_input">si_shown</label><input name="is_shown" id="is_shown_input" type="text" value="1" />
+                    </li>
+                </ul>
+                <input type="submit" value="send">
+            </form>
+            <hr>
+            <div id="output"></div>
+
         </div>
     </div>
     <div class="tab">

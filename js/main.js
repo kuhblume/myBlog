@@ -90,6 +90,7 @@ function requestAjax(endpoint, callback) {
     xhr.send();
 }
 
+let testData;
 function doRequest(){
     // var xhr = new XMLHttpRequest();
     //
@@ -109,10 +110,12 @@ function doRequest(){
     // xhr.send();
 
     const request = new XMLHttpRequest();
-    request.open("GET", `http://localhost:3000`);
+    request.open("GET", `http://localhost:3000/get-all`);
     request.addEventListener("load", (event) => {
         console.log(event.target.status); // => 200
-        console.log(event.target.responseText); // => "{...}"
+        console.log(event.target.responseText); // => "body"
+        console.log(event.target); // => "{...}"
+        testData=event.target.responseText;
     });
     request.send();
 }
@@ -165,22 +168,83 @@ function doReq() {
 //     xmlHttpRequest.send( data );
 
 
-    // XHRの宣言
-    var XHR = new XMLHttpRequest();
+    let XHR = new XMLHttpRequest();
+    // openメソッドにPOSTを指定して送信先のURLを指定
+    XHR.open("POST", 'http://localhost:3000/add', true);
 
-    // openメソッドにPOSTを指定して送信先のURLを指定します
-    XHR.open("POST", 'http://localhost:3000/test', true);
+    // XHR.onreadystatechange = function() {
+    //     if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
+    //         // 送信に成功した時の処理
+    //         console.log(this.statusText);
+    //     }
+    // };
+    //
+    // // サーバの応答をonreadystatechangeイベントで検出して正常終了したらデータを取得する
+    // XHR.onreadystatechange = function(){
+    //     if(XHR.readyState == 4 && XHR.status == 200){
+    //         // POST送信した結果を表示する
+    //         console.log(XHR.responseText);
+    //     }
+    // };
 
-    // sendメソッドにデータを渡して送信を実行する
-    XHR.send("aaaaaa");
+    // sendメソッドにデータを渡して送信
+    // XHR.send('postFromHtml=iiii&test1=iaia'); // POSTメソッドで送信するデータ);
+    XHR.send('title=タイトル&date=1945-08-15&body=endDay&tag=1&is_shown=1'); // POSTメソッドで送信するデータ);
 
-    // サーバの応答をonreadystatechangeイベントで検出して正常終了したらデータを取得する
-    XHR.onreadystatechange = function(){
-        if(XHR.readyState == 4 && XHR.status == 200){
-            // POST送信した結果を表示する
-            console.log(XHR.responseText);
-        }
-    };
+    // // サーバの応答をonreadystatechangeイベントで検出して正常終了したらデータを取得する
+    // XHR.onreadystatechange = function(){
+    //     if(XHR.readyState == 4 && XHR.status == 200){
+    //         // POST送信した結果を表示する
+    //         console.log(XHR.responseText);
+    //     }
+    // };
+
+    XHR.addEventListener("load", (event) => {
+        console.log(event.target.status); // => 200
+        console.log(event.target.responseText); // => "body"
+        console.log(event.target); // => "{...}"
+    });
 }
 
+// let title = document.forms.post.title.value;
+//綺麗なhtmlから綺麗にjs取得できたよねうれしい
+
+
+//日付取得
+let date = new Date();
+let time = {
+    fullYear:date.getFullYear(),
+    month:("0"+(date.getMonth()+1)).slice(-2),
+    date:("0"+date.getDate()).slice(-2),
+};
+document.forms.post.date.value=time.fullYear+'-'+time.month+'-'+time.date;
+
+
+function send() {
+    let request = {
+        title:document.forms.post.title.value,
+        date:document.forms.post.date.value,
+        body:document.forms.post.body.value,
+        tag:document.forms.post.tag.value,
+        is_shown:document.forms.post.is_shown.value,
+    };
+    console.log(request);
+
+    let XHR = new XMLHttpRequest();
+    XHR.open("POST", 'http://localhost:3000/add', true);
+    XHR.send(`title=${request.title}&date=${request.date}&body=${request.body}&tag=${request.tag}&is_shown=${request.is_shown}`);
+    //応答確認なしのpost
+}
+
+
+let out = document.getElementById('output');
+function showData() {
+    let json = JSON.parse(testData);
+    let part ='';
+    // console.log(json[0]);
+    json.forEach(post=>{
+        part+=`<ul><li>${post.id}</li><li>${post.title}</li><li>${post.date}</li><li>${post.body}</li><li>${post.tag}</li></ul>`;
+    });
+    out.innerHTML=part;
+}
 
