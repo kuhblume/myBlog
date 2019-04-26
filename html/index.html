@@ -142,6 +142,11 @@
         <div class="content">
             <h2>Other<span>他サイト情報とか</span></h2>
             <p>アクセス端末とかアクセスログとか。これもDBかテキストファイルで保存</p>
+            <form id="eval" action="" method="post" onsubmit="runEval();return false;">
+                <label for="eval_input">eval実行(割と何でもできる)</label><input name="eval" id="eval_input" type="text" value="" />
+                <input type="submit" value="run">
+            </form>
+<!--            <button onclick="runEval()">run</button>-->
         </div>
     </div>
 
