@@ -251,12 +251,12 @@ function showData() {
 }
 
 
-function runEval() {
-    let eval_body = document.forms.eval.eval.value;
-    try {
-        eval(eval_body);
-        console.log('run : '+eval_body);
-    }catch (e) {
-        console.log('%cEval Error =>\n','background-color: #FFCCCC;',e);
-    }
-}
+// function runEval() {
+//     let eval_body = document.forms.eval.eval.value;
+//     try {
+//         eval(eval_body);
+//         console.log('run : '+eval_body);
+//     }catch (e) {
+//         console.log('%cEval Error =>\n','background-color: #FFCCCC;',e);
+//     }
+// }
