@@ -5,14 +5,15 @@ body{
 }
 .header{
     position: fixed;            /* ヘッダーの固定 */
-    top: 0;
-    left: 0;
+    /*top: 0;*/
+    /*left: 0;*/
     width: 100vw;
     height: 70px;             /* 縦幅140px */
     background-color: #262672;
     z-index: 15;
 
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 .footer{
@@ -110,22 +111,32 @@ h2 span:before{
 
 #radioCase{
     display: flex;
-    flex: 1; padding-left: -20px;
-    padding-right: 20px;
+    flex: 1;
+    /*padding-bottom: 20px;*/
+    padding-left: -10px;
+    padding-right: 10px;
 }
 #radioCase div{
     flex: 1;
     text-align: center;
 }
+#radioCase div label{
+    display: table;
+    width: 80%;
+    height: 100%;
+}
+#radioCase div label span{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
 .hiddenRadio{
     display: none;
 }
-#radioCase div label{
 
-}
 
 @media screen and (min-width: 640px) {
-    /* 表示領域が800px以上の場合に適用するスタイル */
+    /* 表示領域が640px以上の場合に適用するスタイル */
     .hiddenRadio + .radioIcon{
         position: relative;
         display: inline-block;
@@ -133,13 +144,28 @@ h2 span:before{
         height: 40px;
         width: 80%;
         border-radius: 10px 10px 10px 10px; /*左上,右下に40px*/
-        font-family: 'Century Gothic';
+        /*font-family: 'Century Gothic';*/
         color: #FFF;
+    }
+    #radioCase div:nth-child(1) span::before{
+        content: "Home";
+    }
+    #radioCase div:nth-child(2) span::before{
+        content: "Profile";
+    }
+    #radioCase div:nth-child(3) span::before{
+        content: "Link";
+    }
+    #radioCase div:nth-child(4) span::before{
+        content: "Blog";
+    }
+    #radioCase div:nth-child(5) span::before{
+        content: "Other";
     }
 }
 
 @media screen and (max-width: 640px) {
-    /* 表示領域が320px以下の場合に適用するスタイル */
+    /* 表示領域が640px以下の場合に適用するスタイル */
     .hiddenRadio + .radioIcon{
         position: relative;
         display: inline-block;
@@ -147,9 +173,12 @@ h2 span:before{
         height: 40px;
         width: 80%;
         border-radius: 10px 10px 10px 10px; /*左上,右下に40px*/
-        font-family: 'Century Gothic';
-        font-size: 0;
+        /*font-family: 'Century Gothic';*/
+        /*font-size: 0;*/
         color: #FFF;
+    }
+    #radioCase div span::before{
+        content: "　";
     }
 }
 .hiddenRadio:checked + .radioIcon{

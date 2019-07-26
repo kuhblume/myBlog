@@ -9,7 +9,6 @@ let radios = document.getElementsByName('radio');
 //右下はhiddenでもシークバーで無理やり伸ばされるけど左上の見えない要素はシークバーで延ばされないっぽい
 let tabLocate=['0','-100%','-100%','-100%','-100%'];
 
-
 function right() {
     // tabs[0].style.zIndex--;
     tabLocate.unshift(tabLocate.pop());
@@ -110,8 +109,8 @@ function doRequest(){
     // xhr.send();
 
     const request = new XMLHttpRequest();
-    // request.open("GET", `http://localhost:3000/get-all`);
-    request.open("GET", `https://node-db-kuhblume.herokuapp.com/get-all`);
+    request.open("GET", `http://localhost:3000/get-all`);
+    // request.open("GET", `https://node-db-kuhblume.herokuapp.com/get-all`);
     request.addEventListener("load", (event) => {
         console.log(event.target.status); // => 200
         console.log(event.target.responseText); // => "body"
